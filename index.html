@@ -3,13 +3,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Big Fat Happy Data &mdash; Big Fat Happy Data v0.0.0 documentation</title>
+    <title>Big Fat Happy Data &mdash; Big Fat Happy Data 0.0.0 documentation</title>
+    
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -22,7 +25,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Big Fat Happy Data v0.0.0 documentation" href="#" /> 
+    <link rel="top" title="Big Fat Happy Data 0.0.0 documentation" href="#" />
+    <link rel="next" title="Project Introduction" href="intro.html" /> 
   </head>
   <body>
     <div class="related">
@@ -31,7 +35,10 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="#">Big Fat Happy Data v0.0.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="intro.html" title="Project Introduction"
+             accesskey="N">next</a> |</li>
+        <li><a href="#">Big Fat Happy Data 0.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -42,9 +49,81 @@
             
   <div class="section" id="big-fat-happy-data">
 <h1>Big Fat Happy Data<a class="headerlink" href="#big-fat-happy-data" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
+<dl class="glossary docutils">
+<dt id="term-big">big</dt>
+<dd><p class="first"><em>adjective</em></p>
+<ul class="last simple">
+<li>large, as in size, height, width, or amount: a big house; a big quantity.</li>
+<li>of major concern, importance, gravity, or the like: a big problem.</li>
+</ul>
+</dd>
+<dt id="term-fat">fat</dt>
+<dd><p class="first"><em>adjective</em></p>
+<ul class="last simple">
+<li>plump; well-fed: a good, fat chicken.</li>
+<li>profitable, as an office: a fat job on the city commission.</li>
+<li>affording good opportunities, especially for gain: a fat business contract.</li>
+</ul>
+</dd>
+<dt id="term-happy">happy</dt>
+<dd><p class="first"><em>adjective</em></p>
+<ul class="last simple">
+<li>obsessed by or quick to use the item indicated (usually used in combination): a trigger-happy gangster. Everybody is gadget-happy these days.</li>
+<li>characterized by or indicative of pleasure, contentment, or joy: a happy mood; a happy frame of mind.</li>
+<li>apt or felicitous, as actions, utterances, or ideas.</li>
+</ul>
+</dd>
+<dt id="term-data">data</dt>
+<dd><p class="first"><em>noun</em></p>
+<ul class="last simple">
+<li>a plural of datum.</li>
+<li>( used with a plural verb ) individual facts, statistics, or items of information: These data represent the results of our analyses. Data are entered by terminal for immediate processing by the computer.</li>
+<li>( used with a singular verb ) a body of facts; information: Additional data is available from the president of the firm.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>This is a testing and documentation project oriented around using large documents, typically
+with document oriented databases, rather than many tables with many rows.  This document
+focuses on the following concepts of storing data assets:</p>
+<ul>
+<li><p class="first">Focusing on decreasing row counts for relative data</p>
+</li>
+<li><p class="first">Reducing new connections to database servers</p>
+</li>
+<li><p class="first">Reducing the overall query count for a specific context (a page of content, a users profile)</p>
+</li>
+<li><p class="first">Removing the need for a lot of table relationships</p>
+</li>
+<li><p class="first">Increasing caching performance</p>
+</li>
+<li><dl class="first docutils">
+<dt>Focusing on new techniques related to caching</dt>
+<dd><ul class="first last">
+<li><p class="first">Storing cache information in the app instance (optional but fun!)</p>
+</li>
+<li><dl class="first docutils">
+<dt>Using multi-key indexes to store timestamp data</dt>
+<dd><ul class="first last simple">
+<li>Pulling the index element directly from memory!</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<p>This document will not be for everybody.  I&#8217;m totally O.K. with that.</p>
+</div>
+</div>
+<div class="section" id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Project Introduction</a></li>
 </ul>
 </div>
 </div>
@@ -65,11 +144,18 @@
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Big Fat Happy Data</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contents">Contents</a><ul>
 </ul>
 </li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
+  <h4>Next topic</h4>
+  <p class="topless"><a href="intro.html"
+                        title="next chapter">Project Introduction</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
@@ -98,12 +184,15 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="#">Big Fat Happy Data v0.0.0 documentation</a> &raquo;</li> 
+        <li class="right" >
+          <a href="intro.html" title="Project Introduction"
+             >next</a> |</li>
+        <li><a href="#">Big Fat Happy Data 0.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, Shane R. Spencer.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

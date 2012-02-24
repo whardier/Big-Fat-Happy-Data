@@ -6,10 +6,61 @@
 Big Fat Happy Data
 ==================
 
-Contents:
+.. glossary::
+
+   big
+      *adjective*
+
+      - large, as in size, height, width, or amount: a big house; a big quantity.
+      - of major concern, importance, gravity, or the like: a big problem.
+
+   fat
+      *adjective*
+     
+      - plump; well-fed: a good, fat chicken.
+      - profitable, as an office: a fat job on the city commission.
+      - affording good opportunities, especially for gain: a fat business contract.
+
+   happy
+      *adjective*
+
+      - obsessed by or quick to use the item indicated (usually used in combination): a trigger-happy gangster. Everybody is gadget-happy these days.   
+      - characterized by or indicative of pleasure, contentment, or joy: a happy mood; a happy frame of mind.
+      - apt or felicitous, as actions, utterances, or ideas.
+
+   data
+      *noun*
+
+      - a plural of datum.
+      - ( used with a plural verb ) individual facts, statistics, or items of information: These data represent the results of our analyses. Data are entered by terminal for immediate processing by the computer.
+      - ( used with a singular verb ) a body of facts; information: Additional data is available from the president of the firm.
+
+Overview
+--------
+
+This is a testing and documentation project oriented around using large documents, typically 
+with document oriented databases, rather than many tables with many rows.  This document 
+focuses on the following concepts of storing data assets:
+
+- Focusing on decreasing row counts for relative data
+- Reducing new connections to database servers
+- Reducing the overall query count for a specific context (a page of content, a users profile)
+- Removing the need for a lot of table relationships
+- Increasing caching performance
+- Focusing on new techniques related to caching
+    - Storing cache information in the app instance (optional but fun!)
+    - Using multi-key indexes to store timestamp data
+        - Pulling the index element directly from memory!
+
+This document will not be for everybody.  I'm totally O.K. with that.
+
+Contents
+========
 
 .. toctree::
    :maxdepth: 2
+
+   intro
 
 Indices and tables
 ==================

@@ -1,0 +1,6 @@
+.. Big Fat Happy Data documentation intro file. Who what when where and why.
+
+Project Introduction
+====================
+
+Nothing to see here.. move along..
