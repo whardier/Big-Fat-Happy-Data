@@ -8,7 +8,7 @@ Big Fat Happy Data
 
 .. glossary::
 
-   Big
+   `Big <http://dictionary.reference.com/browse/big>`_
       *adjective*
 
       - large, as in size, height, width, or amount: a big house; a big 
@@ -16,7 +16,7 @@ Big Fat Happy Data
 
       - of major concern, importance, gravity, or the like: a big problem.
 
-   Fat
+   `Fat <http://dictionary.reference.com/browse/fat>`_
       *adjective*
      
       - plump; well-fed: a good, fat chicken.
@@ -26,7 +26,7 @@ Big Fat Happy Data
       - affording good opportunities, especially for gain: a fat business 
         contract.
 
-   Happy
+   `Happy <http://dictionary.reference.com/browse/happy>`_
       *adjective*
 
       - obsessed by or quick to use the item indicated (usually used in 
@@ -38,7 +38,7 @@ Big Fat Happy Data
 
       - apt or felicitous, as actions, utterances, or ideas.
 
-   Data
+   `Data <http://dictionary.reference.com/browse/data>`_
       *noun*
 
       - a plural of datum.
@@ -87,7 +87,7 @@ located at `http://github.com/whardier/Big-Fat-Happy-Data
 <http://github.com/whardier/Big-Fat-Happy-Data>`_ and this content is accessable 
 as a web page at `http://whardier.github.com/Big-Fat-Happy-Data 
 <http://whardier.github.com/Big-Fat-Happy-Data>`_ if you are reading this 
-content in another published format.
+content in another published format for some reason.
 
 Issues
 ------
@@ -109,6 +109,8 @@ Contents
    :maxdepth: 3
 
    intro
+   schema
+   faq
 
 Indices and tables
 ==================

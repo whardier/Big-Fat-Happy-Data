@@ -1,36 +1,9 @@
 .. Big Fat Happy Data documentation intro file. Who what when where and why.
 
-.. _Shane R. Spencer: http://github.com/whardier/
-
-.. _Creative Commons Attribution-ShareAlike 3.0 Unported License: 
-   http://creativecommons.org/licenses/by-sa/3.0/
-
-.. _MongoDB: http://www.mongodb.org/
-
-.. _10gen: http://10gen.com/
-
-.. _Redis: http://redis.io/
-
-.. _VMWare: http://www.vmware.com/
-
-.. _MySQL: http://www.mysql.com/
-
-.. _Django: https://www.djangoproject.com/
-
-.. _Django MongoDB Engine: http://django-mongodb.org/
-
-.. _Informadiko: http://informadiko.github.com/
-
-.. _TornadoWeb: http://www.tornadoweb.org/
-
-.. _Xapian: http://xapian.org/
-
-.. _Mongrel2: http://mongrel2.org/
-
-.. _Brubeck: http://brubeck.io/
-
-Project Introduction
-====================
+.. include:: refs.rst
+   
+Introduction
+============
 
 This documentation project is the result of work by `Shane R. Spencer`_ and is 
 licensed under the `Creative Commons Attribution-ShareAlike 3.0 Unported 
@@ -38,8 +11,8 @@ License`_.
 
 Many of the techniques used in this documentation are not solely associated with 
 `Shane R. Spencer`_ and for the most part are the intellectual property of the 
-nameless horde known as humanity.  If you feel like you want some attribution 
-please make yourself known.
+nameless horde known as humanity.  If you feel as though you might like some 
+attribution please make yourself known.
 
 Licensing
 ---------
@@ -71,7 +44,7 @@ structure typically associated with database management systems that directly
 support the SQL standards for describing a query and processing results.
 
 Relational database solutions typically do not concentrate on large amounts of 
-data per 'row', hence the name of this document.  Hopefully some benchmarks, 
+data per "row", hence the name of this document.  Hopefully some benchmarks, 
 storage comparisons, and network analysis will help developers understand the 
 crazy method I've been calling *"Big Fat Happy Data"*!
 
@@ -79,11 +52,10 @@ The initial use of these methods is being utilized in the project `Informadiko`_
 which is currently based around `TornadoWeb`_, `MongoDB`_ and `Xapian`_.  
 `Mongrel2`_ and `Brubeck`_ are also being evaluated for the project.
 
-The Tech
---------
+Reference Technology
+--------------------
 
-This document focuses on using `MongoDB`_ and `Redis`_ as KV stores.  
-MongoDB 
+This document focuses on using `MongoDB`_ and `Redis`_ as KV stores.  MongoDB 
 has a very rich query parser that helps the developer keep things simple while 
 still using a KV based solution and Redis does a great job at keeping data at 
 the ready, handling atomic operations, and allowing blazing fast access to key 
@@ -95,7 +67,6 @@ when developing reliable database solutions.
 .. glossary::
 
    `MongoDB`_
-
       Created by `10gen`_ as a feature rich KV store that can be seen as a 
       document store.  Documents are stored in collections that can be mapped to
       database servers in a myriad of ways.  The most common and simple setup 
@@ -103,7 +74,6 @@ when developing reliable database solutions.
       simultaneously.
 
    `Redis`_
-
       Created by `Salvatore Sanfilippo`_ and is currently sponsored by 
       `VMWare`_.  Redis is an known as an in-memory KV store however data is 
       backed onto the disk for extra persistence.
@@ -122,12 +92,10 @@ interfaces.
 .. glossary::
 
    `MySQL`_
-
       Wildly popular as an Open Source database solution.  Allows for SQL query 
       syntax and multiple procedural languages.  Very mature.
 
    `Django`_
-
       A very useful tool that lives up to its slogan 'The Web framework for 
       perfectionists with deadlines'.  The object relationship manager used by 
       Django is inspired by and in turn inspires many other projects with a 
@@ -136,3 +104,65 @@ interfaces.
       MongoDB it is recommended to use 'Django MongoDB Engine'_ and the 
       associated prerequisites to allow the Django ORM to operate cleanly on top 
       of many NoSQL like backends.
+
+Reference Specification
+-----------------------
+
+The initial reference specification used for the data is for an arbitrary 
+information storage and retrieval system you would use for collecting forms data 
+or storing searchable information for later queries.  The project this was 
+developed around originally started out as Django+MySQL then moved to 
+Django+MongoDB and is currently using Tornado+MongoDB and the techniques 
+described in this document.
+
+The specification (not schema) is defined as follows and referenced in the next 
+topic:
+
+**Account Database**
+   Stores information about account
+
+**Collection Database**
+   Stores information about a collection of data
+
+   Has **account** references
+      Typically only associated with one account
+      If associated with +1 collection then a through table is used
+
+**Criteria Database**
+   Stores information about fields available to a specific collection
+
+   Has a single **account** reference
+      Even though this is for a specific collection it may be smart indexing to 
+      reference the account as the first key to help support spreading the 
+      database and keeping account information isolated to a specific area
+
+   Has **collection** references
+      Typically only associated with one collection
+      If associated with +1 collection then a through table is used
+
+**User Database**
+   Stores global user information (username, password, email, hat color)
+
+   Has **account** references
+      Associated with multiple accounts
+
+**User Account Profile**
+   Since we associate with multiple accounts we need information about timezone 
+preferences when rendering this users content.
+
+   Has a single **account** reference   
+
+   Has a single **user** reference   
+   
+**User Collection Profile**
+   Since we associate with multiple accounts we also would like to provide per 
+collection preferences for things like time zones, if this collection is 
+bookmarked, and other flags a user can have against a specific collection
+
+   Has a single **account** reference
+
+   Has a single **collection** reference
+
+   Has a single **user** reference      
+
+O.K. good.  Now we have a quick and dirty starting point.
