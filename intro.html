@@ -3,16 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Project Introduction &mdash; Big Fat Happy Data 0.0.0 documentation</title>
-    
+    <title>Introduction &mdash; Big Fat Happy Data v0.0.0 documentation</title>
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '',
@@ -25,7 +22,8 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Big Fat Happy Data 0.0.0 documentation" href="index.html" />
+    <link rel="top" title="Big Fat Happy Data v0.0.0 documentation" href="index.html" />
+    <link rel="next" title="Reference Schema" href="schema.html" />
     <link rel="prev" title="Big Fat Happy Data" href="index.html" /> 
   </head>
   <body>
@@ -36,9 +34,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
+          <a href="schema.html" title="Reference Schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
           <a href="index.html" title="Big Fat Happy Data"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Big Fat Happy Data 0.0.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Big Fat Happy Data v0.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -47,9 +48,155 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="project-introduction">
-<h1>Project Introduction<a class="headerlink" href="#project-introduction" title="Permalink to this headline">¶</a></h1>
-<p>Nothing to see here.. move along..</p>
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>This documentation project is the result of work by <a class="reference external" href="http://github.com/whardier/">Shane R. Spencer</a> and is
+licensed under the <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported
+License</a>.</p>
+<p>Many of the techniques used in this documentation are not solely associated with
+<a class="reference external" href="http://github.com/whardier/">Shane R. Spencer</a> and for the most part are the intellectual property of the
+nameless horde known as humanity.  If you feel as though you might like some
+attribution please make yourself known.</p>
+<div class="section" id="licensing">
+<h2>Licensing<a class="headerlink" href="#licensing" title="Permalink to this headline">¶</a></h2>
+<p>As previously mentioned.. this work is licensed under the <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons
+Attribution-ShareAlike 3.0 Unported License</a>.</p>
+<p>This license lets others remix, tweak, and build upon this project even for
+commercial purposes, as long as they credit the author and license their new
+creations under the identical terms. This license is often compared to
+“copyleft” free and open source software licenses. All new works based on yours
+will carry the same license, so any derivatives will also allow commercial use.
+This is the license used by Wikipedia, and is recommended for materials that
+would benefit from incorporating content from Wikipedia and similarly licensed
+projects.</p>
+</div>
+<div class="section" id="background">
+<h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+<p>Key-Value stores (KV) have existed for a good long time and have subsequently
+served humanity and its more technically inclined people very well.</p>
+<p>The history and of KV based storage methods is well beyond the scope of this
+document.  Briefly however, the idea of quick and fast access to stored values
+relating to a named key is fundamental to how modern databases work.  More
+recently we&#8217;ve all seen an increase in fun new storage techniques associated
+with the NoSQL genre which, simply put, breaks away from the relational database
+structure typically associated with database management systems that directly
+support the SQL standards for describing a query and processing results.</p>
+<p>Relational database solutions typically do not concentrate on large amounts of
+data per &#8220;row&#8221;, hence the name of this document.  Hopefully some benchmarks,
+storage comparisons, and network analysis will help developers understand the
+crazy method I&#8217;ve been calling <em>&#8220;Big Fat Happy Data&#8221;</em>!</p>
+<p>The initial use of these methods is being utilized in the project <a class="reference external" href="http://informadiko.github.com/">Informadiko</a>
+which is currently based around <a class="reference external" href="http://www.tornadoweb.org/">TornadoWeb</a>, <a class="reference external" href="http://www.mongodb.org/">MongoDB</a> and <a class="reference external" href="http://xapian.org/">Xapian</a>.
+<a class="reference external" href="http://mongrel2.org/">Mongrel2</a> and <a class="reference external" href="http://brubeck.io/">Brubeck</a> are also being evaluated for the project.</p>
+</div>
+<div class="section" id="reference-technology">
+<h2>Reference Technology<a class="headerlink" href="#reference-technology" title="Permalink to this headline">¶</a></h2>
+<p>This document focuses on using <a class="reference external" href="http://www.mongodb.org/">MongoDB</a> and <a class="reference external" href="http://redis.io/">Redis</a> as KV stores.  MongoDB
+has a very rich query parser that helps the developer keep things simple while
+still using a KV based solution and Redis does a great job at keeping data at
+the ready, handling atomic operations, and allowing blazing fast access to key
+data.  This is of course very general since both projects have a huge list of
+pros and cons that the Internet is more than happy to point out.  However the
+developers of both solutions are techodweebs with a good nose for what to avoid
+when developing reliable database solutions.</p>
+<dl class="glossary docutils">
+<dt id="term-mongodb"><a class="reference external" href="http://www.mongodb.org/">MongoDB</a></dt>
+<dd>Created by <a class="reference external" href="http://10gen.com/">10gen</a> as a feature rich KV store that can be seen as a
+document store.  Documents are stored in collections that can be mapped to
+database servers in a myriad of ways.  The most common and simple setup
+involves a single database server hosting one or more collections
+simultaneously.</dd>
+<dt id="term-redis"><a class="reference external" href="http://redis.io/">Redis</a></dt>
+<dd>Created by <a href="#id1"><span class="problematic" id="id2">`Salvatore Sanfilippo`_</span></a> and is currently sponsored by
+<a class="reference external" href="http://www.vmware.com/">VMWare</a>.  Redis is an known as an in-memory KV store however data is
+backed onto the disk for extra persistence.</dd>
+</dl>
+<p>Other technologies used in this document to help comparatively describe the data
+layout as well as offer some fun benchmarks include the popular relational
+database management system (RDBMS) <a class="reference external" href="http://www.mysql.com/">MySQL</a> as well as the object relationship
+manager (ORM) used by <a class="reference external" href="https://www.djangoproject.com/">Django</a>.  These two products may appear to get the shaft
+a bit.. however the should be considered very valuable projects.  Both have
+inspired projects as well as been part of the foundation for a very high
+percentage of websites, custom applications, and large enterprise scale
+solutions.  Maybe not Django so much on the last two since it&#8217;s a web framework,
+however the ORM itself has powered many ideas completely unrelated to web
+interfaces.</p>
+<dl class="glossary docutils">
+<dt id="term-mysql"><a class="reference external" href="http://www.mysql.com/">MySQL</a></dt>
+<dd>Wildly popular as an Open Source database solution.  Allows for SQL query
+syntax and multiple procedural languages.  Very mature.</dd>
+<dt id="term-django"><a class="reference external" href="https://www.djangoproject.com/">Django</a></dt>
+<dd>A very useful tool that lives up to its slogan &#8216;The Web framework for
+perfectionists with deadlines&#8217;.  The object relationship manager used by
+Django is inspired by and in turn inspires many other projects with a
+similar goal.  It is well written, lazy (that&#8217;s a good thing), and makes
+good use of both RDBMS and NoSQL database backends.  To use Django with
+MongoDB it is recommended to use &#8216;Django MongoDB Engine&#8217;_ and the
+associated prerequisites to allow the Django ORM to operate cleanly on top
+of many NoSQL like backends.</dd>
+</dl>
+</div>
+<div class="section" id="reference-specification">
+<h2>Reference Specification<a class="headerlink" href="#reference-specification" title="Permalink to this headline">¶</a></h2>
+<p>The initial reference specification used for the data is for an arbitrary
+information storage and retrieval system you would use for collecting forms data
+or storing searchable information for later queries.  The project this was
+developed around originally started out as Django+MySQL then moved to
+Django+MongoDB and is currently using Tornado+MongoDB and the techniques
+described in this document.</p>
+<p>The specification (not schema) is defined as follows and referenced in the next
+topic:</p>
+<dl class="docutils">
+<dt><strong>Account Database</strong></dt>
+<dd>Stores information about account</dd>
+<dt><strong>Collection Database</strong></dt>
+<dd><p class="first">Stores information about a collection of data</p>
+<dl class="last docutils">
+<dt>Has <strong>account</strong> references</dt>
+<dd>Typically only associated with one account
+If associated with +1 collection then a through table is used</dd>
+</dl>
+</dd>
+<dt><strong>Criteria Database</strong></dt>
+<dd><p class="first">Stores information about fields available to a specific collection</p>
+<dl class="last docutils">
+<dt>Has a single <strong>account</strong> reference</dt>
+<dd>Even though this is for a specific collection it may be smart indexing to
+reference the account as the first key to help support spreading the
+database and keeping account information isolated to a specific area</dd>
+<dt>Has <strong>collection</strong> references</dt>
+<dd>Typically only associated with one collection
+If associated with +1 collection then a through table is used</dd>
+</dl>
+</dd>
+<dt><strong>User Database</strong></dt>
+<dd><p class="first">Stores global user information (username, password, email, hat color)</p>
+<dl class="last docutils">
+<dt>Has <strong>account</strong> references</dt>
+<dd>Associated with multiple accounts</dd>
+</dl>
+</dd>
+<dt><strong>User Account Profile</strong></dt>
+<dd>Since we associate with multiple accounts we need information about timezone</dd>
+</dl>
+<p>preferences when rendering this users content.</p>
+<blockquote>
+<div><p>Has a single <strong>account</strong> reference</p>
+<p>Has a single <strong>user</strong> reference</p>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>User Collection Profile</strong></dt>
+<dd>Since we associate with multiple accounts we also would like to provide per</dd>
+</dl>
+<p>collection preferences for things like time zones, if this collection is
+bookmarked, and other flags a user can have against a specific collection</p>
+<blockquote>
+<div><p>Has a single <strong>account</strong> reference</p>
+<p>Has a single <strong>collection</strong> reference</p>
+<p>Has a single <strong>user</strong> reference</p>
+</div></blockquote>
+<p>O.K. good.  Now we have a quick and dirty starting point.</p>
+</div>
 </div>
 
 
@@ -58,9 +205,23 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Introduction</a><ul>
+<li><a class="reference internal" href="#licensing">Licensing</a></li>
+<li><a class="reference internal" href="#background">Background</a></li>
+<li><a class="reference internal" href="#reference-technology">Reference Technology</a></li>
+<li><a class="reference internal" href="#reference-specification">Reference Specification</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Big Fat Happy Data</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="schema.html"
+                        title="next chapter">Reference Schema</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/intro.txt"
@@ -90,14 +251,17 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
+          <a href="schema.html" title="Reference Schema"
+             >next</a> |</li>
+        <li class="right" >
           <a href="index.html" title="Big Fat Happy Data"
              >previous</a> |</li>
-        <li><a href="index.html">Big Fat Happy Data 0.0.0 documentation</a> &raquo;</li> 
+        <li><a href="index.html">Big Fat Happy Data v0.0.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, Shane R. Spencer.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.0.8.
     </div>
   </body>
 </html>
